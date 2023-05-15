@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: Tank 1
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 0f5483cd2d0490046842dd2d00b601e0, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 4beee0bc31c17b647bb5eb5306840e7a, type: 2}
+  - {fileID: 2100000, guid: 003e3807f96473145924eda969a461a1, type: 2}
+  - {fileID: 2100000, guid: ff8c68b4d68193b4f89976290d88b2de, type: 2}
+  - {fileID: 2100000, guid: b1243aae2733b7b4bae38be11e2dcd82, type: 2}
+  - {fileID: 2100000, guid: 9ce3da4b2e0c58143bc7cb59a3c42ee5, type: 2}
+  - {fileID: 2100000, guid: d80260b6cb8368c48b9d509b36ea14fa, type: 2}
+  - {fileID: 2100000, guid: 8195cd7e66ec5a64e82749dd1ef1b373, type: 2}
+  - {fileID: 2100000, guid: b35050ed565fa2343a2f29425b0cb798, type: 2}
+  - {fileID: 2100000, guid: 94ccbb89b067f304896c091aa8c0a217, type: 2}
+  - {fileID: 2100000, guid: 94ccbb89b067f304896c091aa8c0a217, type: 2}
+  - {fileID: 2100000, guid: f66739a3e62beea45a98e33b37ed8ebd, type: 2}
+  - {fileID: 2100000, guid: 565876ee34c34a64fad899a013d91fcb, type: 2}
+  - {fileID: 2100000, guid: 7e8b5b157da11fc46a4fa9e8626e41b4, type: 2}
+  - {fileID: 2100000, guid: efc0ddfeece7df34b876154e46394a3d, type: 2}
