@@ -9,6 +9,7 @@ public class CharacterAnimController : MonoBehaviour
     public static bool leftMove;
     public static bool rightMove;
     public static bool jump;
+    public static bool roll;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,11 @@ public class CharacterAnimController : MonoBehaviour
         
     }
 
-    
+    public void rollForwardDown()
+    {
+        roll = true;
+        characterAnim.SetTrigger("Roll");
+    }
     public void rightButtonDown()
     {
         rightMove = true;
@@ -42,7 +47,8 @@ public class CharacterAnimController : MonoBehaviour
     public void jumpButtonDown()
     {
         jump = true;
-        characterAnim.SetTrigger("Jump");
+        if (CharacterMovement.counter == 0) characterAnim.SetTrigger("Jump"); //Yere deðene kadar sadece 1 defa zýplama animasyonu çalýþmasý için
+
     }
     
 }
