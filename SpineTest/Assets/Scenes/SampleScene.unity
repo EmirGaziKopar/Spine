@@ -964,7 +964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7.5
-  rolSpeed: 1.6
+  rolSpeed: 1.8
   jumpParametr: 8
   gravityScale: 100
 --- !u!50 &1297502648
