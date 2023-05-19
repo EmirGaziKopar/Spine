@@ -24,7 +24,7 @@ public class CharacterMovement : MonoBehaviour
 
     
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //ikinci seçenek rigidbody2D.velocity += new vector2() yaparak belli saniye aralýðýnda çalýþtýrmak. Hem zýplama hem yuvarlanma yapmamalý.
         //Burada karaktere 0.5f saniye boyunca vektör toplamasý uyguluyoruz.
@@ -57,10 +57,9 @@ public class CharacterMovement : MonoBehaviour
             */
             if (rollTime < 0.5f)
             {
-                rigidbody2D.velocity += new Vector2(rolSpeed, 0);
-               
-                rollTime += Time.fixedDeltaTime;
-
+                rigidbody2D.velocity += new Vector2(rolSpeed*Time.deltaTime , 0); //Burada time.deltaTime kullanmaya gerek vardýr çünkü kare baþýna anlýk artan deðerlerin toplamýný hesaplýyoruz.  Bu çaðýrýldýðý miktar kadar toplanan bir vektörü simgeler.           
+                rollTime += Time.deltaTime;
+                
             }
 
             else
@@ -71,16 +70,16 @@ public class CharacterMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += new Vector3(-speed / 50, 0, 0);
+            transform.position += new Vector3((-speed / 50) * Time.deltaTime, 0, 0);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += new Vector3(speed / 50, 0, 0);
+            transform.position += new Vector3((speed / 50) * Time.deltaTime, 0, 0);
         }
         //rigidbody2D.AddForce(new Vector2(1,1));
         if (CharacterAnimController.leftMove)
         {
-            transform.position += new Vector3(-speed/50, 0 , 0);
+            transform.position += new Vector3((-speed/50) * Time.deltaTime, 0 , 0);
             /*if(counter == 0) // counter == 0 ise karakter yer ile temas etmiþtir ve yerdedir bu nedenle zemine doðru vektör uygulanmasýna gerek yoktur.
             {
                 rigidbody2D.velocity = new Vector2(-speed * 1, 0);
@@ -96,7 +95,7 @@ public class CharacterMovement : MonoBehaviour
         }
         if (CharacterAnimController.rightMove)
         {
-            transform.position += new Vector3(speed / 50, 0, 0);
+            transform.position += new Vector3((speed / 50) * Time.deltaTime, 0, 0);
             /*
             if (counter == 0)
             {
@@ -117,7 +116,7 @@ public class CharacterMovement : MonoBehaviour
             if (counter < 1)
             {
                 counter++;
-                rigidbody2D.velocity = new Vector2(0, jumpParametr * 1);
+                rigidbody2D.velocity = new Vector2(0, jumpParametr * 1);  //Burada time.deltaTime kullanmaya gerek yoktur çünkü kare baþýna anlýk artan deðerlerin toplamýný hesaplamýyoruz. ör transform.position += ....
             }
             
         }
