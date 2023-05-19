@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    Animator pickUp;
     Rigidbody2D rigidbody2D;
     public float speed;
     public float rolSpeed;
@@ -13,6 +14,7 @@ public class CharacterMovement : MonoBehaviour
     float rollTime;
     float parabolTepeNokta = 0.3f;
     float parabolDip = 0;
+    public GameObject Ball;
 
     Vector2 gravity;
     // Start is called before the first frame update
@@ -20,9 +22,12 @@ public class CharacterMovement : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         gravity = new Vector2(0, -gravityScale);
+        pickUp = this.gameObject.GetComponent<Animator>();
     }
 
     
+    
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -132,6 +137,11 @@ public class CharacterMovement : MonoBehaviour
         {
             counter = 0;
             CharacterAnimController.jump = false;
+        }
+        if (collision.gameObject.tag == "Ball")
+        {
+            Ball.SetActive(false);
+            pickUp.SetBool("PickUp", true);
         }
     }
 }
