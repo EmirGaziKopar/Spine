@@ -10,6 +10,7 @@ public class CharacterAnimController : MonoBehaviour
     public static bool rightMove;
     public static bool jump;
     public static bool roll;
+    public static bool throwBall;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,18 @@ public class CharacterAnimController : MonoBehaviour
     {
         leftMove = false;
         characterAnim.SetBool("RunBack", false);
+    }
+
+    public void throwButtonDown()
+    {
+        if(characterAnim.GetBool("PickUp") == true) //Eðer hali hazýrda topu pickUp'ladýysak atma buttonundaki iþlevler çalýþsýn
+        {
+            throwBall = true;
+
+            characterAnim.SetTrigger("Throw");
+            characterAnim.SetBool("PickUp", false); //Eðer cephane bittiyse false olmalý
+        }
+        
     }
 
     public void jumpButtonDown()

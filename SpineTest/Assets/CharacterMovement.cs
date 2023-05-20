@@ -15,6 +15,9 @@ public class CharacterMovement : MonoBehaviour
     float parabolTepeNokta = 0.3f;
     float parabolDip = 0;
     public GameObject Ball;
+    public Rigidbody2D BallRB;
+    public Transform BallPosition;
+
 
     Vector2 gravity;
     // Start is called before the first frame update
@@ -31,6 +34,15 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (CharacterAnimController.throwBall)
+        {
+            Ball.SetActive(true);
+            Ball.transform.position = BallPosition.position;
+            BallRB.velocity = new Vector2(10f, 5f);
+            CharacterAnimController.throwBall = false;
+            pickUp.SetBool("Jump", false); //Eðer olurda idle'a geçtiðinde jump bool'u true olduysa top attýktan hemen sonra zýplama animasyonu çalýþmasýn diye eklendi.
+        }
+
         //ikinci seçenek rigidbody2D.velocity += new vector2() yaparak belli saniye aralýðýnda çalýþtýrmak. Hem zýplama hem yuvarlanma yapmamalý.
         //Burada karaktere 0.5f saniye boyunca vektör toplamasý uyguluyoruz.
         if (CharacterAnimController.roll) //Bu örnek olarak yazýldý
