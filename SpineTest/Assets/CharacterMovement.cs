@@ -38,7 +38,7 @@ public class CharacterMovement : MonoBehaviour
         {
             Ball.SetActive(true);
             Ball.transform.position = BallPosition.position;
-            BallRB.velocity = new Vector2(10f, 5f);
+            BallRB.velocity = new Vector2(15f, 6f);
             CharacterAnimController.throwBall = false;
             pickUp.SetBool("Jump", false); //Eðer olurda idle'a geçtiðinde jump bool'u true olduysa top attýktan hemen sonra zýplama animasyonu çalýþmasýn diye eklendi.
         }
